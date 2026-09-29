@@ -1,0 +1,47 @@
+[hidden] { display: none !important; }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  display: flex; flex-direction: column;
+  color: var(--vscode-foreground); background: var(--vscode-editor-background);
+  font-family: var(--vscode-font-family); font-size: var(--vscode-font-size);
+}
+.toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+  padding: 8px 12px; border-bottom: 1px solid var(--vscode-panel-border, transparent);
+}
+.toolbar label { display: flex; align-items: center; gap: 5px; white-space: nowrap; cursor: pointer; }
+.toolbar label.locked { opacity: 0.6; }
+.toolbar .spacer { flex: 1; }
+.toolbar input[type='range'] { width: 90px; }
+.toolbar input[type='color'] { width: 22px; height: 22px; padding: 0; border: none; background: none; cursor: pointer; }
+.swatches { display: flex; gap: 6px; }
+.swatch { width: 22px; height: 22px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; padding: 0; }
+.swatch.on { border-color: var(--vscode-focusBorder); }
+button {
+  color: var(--vscode-button-secondaryForeground); background: var(--vscode-button-secondaryBackground);
+  border: none; padding: 5px 12px; font: inherit; cursor: pointer;
+}
+button.primary { color: var(--vscode-button-foreground); background: var(--vscode-button-background); }
+.stage { flex: 1; overflow: auto; display: flex; align-items: flex-start; justify-content: center; padding: 28px; }
+.snap { position: relative; display: inline-block; }
+.window {
+  border-radius: 10px; overflow: hidden; min-width: 320px;
+  box-shadow: 0 20px 68px rgba(0, 0, 0, 0.45), 0 0 0 0.5px rgba(255, 255, 255, 0.08);
+}
+.titlebar { position: relative; height: 38px; display: flex; align-items: center; padding: 0 14px; }
+.dots { display: flex; gap: 8px; }
+.dots i { width: 12px; height: 12px; border-radius: 50%; display: block; }
+.dots i:nth-child(1) { background: #ff5f57; }
+.dots i:nth-child(2) { background: #febc2e; }
+.dots i:nth-child(3) { background: #28c840; }
+.title { position: absolute; left: 0; right: 0; text-align: center; font: 12.5px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; opacity: 0.6; pointer-events: none; }
+.code { padding: 6px 20px 20px; font-family: var(--vscode-editor-font-family, Menlo, Consolas, monospace); font-size: 14px; line-height: 1.55; white-space: pre; }
+.titlebar[hidden] + .code { padding-top: 18px; }
+.ln { display: inline-block; text-align: right; margin-right: 20px; opacity: 0.4; user-select: none; }
+.wm {
+  position: absolute; right: 12px; bottom: 8px;
+  font: 600 11px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35); letter-spacing: 0.3px;
+}
+.hint { padding: 6px 12px; opacity: 0.6; font-size: 0.9em; }

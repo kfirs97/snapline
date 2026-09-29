@@ -1,0 +1,114 @@
+{
+  "name": "snapline",
+  "displayName": "Snapline — Code Screenshots",
+  "description": "Turn code into beautiful, shareable images in one click — using your exact editor theme. A maintained alternative to CodeSnap and Polacode.",
+  "version": "0.1.0",
+  "publisher": "branchline",
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "screenshot",
+    "code screenshot",
+    "codesnap",
+    "polacode",
+    "carbon",
+    "code image",
+    "snippet",
+    "share",
+    "png"
+  ],
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#2b2238",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kfirs97/snapline.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kfirs97/snapline/issues"
+  },
+  "homepage": "https://github.com/kfirs97/snapline#readme",
+  "sponsor": {
+    "url": "https://dealership6.gumroad.com/l/support"
+  },
+  "main": "./dist/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "snapline.snap",
+        "title": "Snap Code",
+        "category": "Snapline",
+        "icon": "$(device-camera)"
+      },
+      {
+        "command": "snapline.enterLicense",
+        "title": "Enter Pro License Key",
+        "category": "Snapline"
+      },
+      {
+        "command": "snapline.removeLicense",
+        "title": "Remove Pro License Key",
+        "category": "Snapline"
+      },
+      {
+        "command": "snapline.buyPro",
+        "title": "Get Snapline Pro",
+        "category": "Snapline"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "snapline.snap",
+          "group": "snapline",
+          "when": "editorHasSelection"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "snapline.snap",
+          "group": "navigation@99",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "snapline.snap",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s",
+        "when": "editorHasSelection"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node esbuild.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node esbuild.mjs && node tools/webtest.mjs",
+    "package": "node esbuild.mjs --production && vsce package --no-dependencies",
+    "e2e": "node esbuild.mjs && esbuild e2e/run.ts e2e/suite.ts --bundle --platform=node --format=cjs --external:vscode --external:@vscode/test-electron --outdir=dist-test/e2e --log-level=warning && node dist-test/e2e/run.js"
+  },
+  "dependencies": {
+    "highlight.js": "^11.12.0",
+    "html-to-image": "^1.11.13"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/vscode": "^1.90.0",
+    "@vscode/test-electron": "^3.1.0",
+    "@vscode/vsce": "^4.0.0",
+    "esbuild": "^0.28.2",
+    "ovsx": "^1.2.0",
+    "puppeteer-core": "^25.12.0",
+    "typescript": "^5.9.3"
+  }
+}
