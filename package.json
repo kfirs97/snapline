@@ -2,7 +2,7 @@
   "name": "snapline-code-screenshots",
   "displayName": "Snapline \u2014 Code Screenshots",
   "description": "Turn code into beautiful, shareable images in one click \u2014 using your exact editor theme. A maintained alternative to CodeSnap and Polacode.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "branchline",
   "license": "SEE LICENSE IN LICENSE",
   "engines": {
