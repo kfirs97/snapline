@@ -5,7 +5,7 @@ import type { SnaplineApi } from '../src/extension';
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
 
 export async function run(): Promise<void> {
-  const api = await vscode.extensions.getExtension<SnaplineApi>('branchline.snapline')!.activate();
+  const api = await vscode.extensions.getExtension<SnaplineApi>('branchline.snapline-code-screenshots')!.activate();
   const doc = await vscode.workspace.openTextDocument(vscode.Uri.joinPath(vscode.workspace.workspaceFolders![0].uri, 'a.ts'));
   const editor = await vscode.window.showTextDocument(doc);
   editor.selection = new vscode.Selection(0, 0, 2, 1);
