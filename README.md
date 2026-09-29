@@ -33,7 +33,7 @@ Run **`Snapline: Get Snapline Pro`**, then **`Snapline: Enter Pro License Key`**
 
 - **[Branchline — Git Graph](https://marketplace.visualstudio.com/items?itemName=branchline.branchline)** — a fast, maintained Git Graph.
 - **[TODO Lens — Better Comments & TODO Tree](https://marketplace.visualstudio.com/items?itemName=branchline.todo-lens)** — color-coded comments and every TODO in one tree.
-- **[Docline — Python Docstring Generator](https://marketplace.visualstudio.com/items?itemName=branchline.docline-python-docstring-generator)** — type `"""` and get Google/NumPy/Sphinx docstrings.
+- **[Docline — Instant Python Docstrings](https://marketplace.visualstudio.com/items?itemName=branchline.docline-python-docstring-generator)** — type `"""` and get Google/NumPy/Sphinx docstrings.
 
 ## Support
 
