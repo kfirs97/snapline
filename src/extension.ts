@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import { randomBytes } from 'node:crypto';
 import { License } from './license';
 import { BUY_URL } from './licenseVerify';
+import { recordUse } from './nudge';
 import { DEFAULT_SETTINGS, FromWebview, SnapSettings, ToWebview } from './protocol';
 
 const SETTINGS_KEY = 'snapline.settings';
@@ -81,6 +82,7 @@ export async function activate(context: vscode.ExtensionContext): Promise<Snapli
       editor.selections = originalSelections;
       post({ type: 'code', text, fileName: editor.document.fileName.split(/[\\/]/).pop()!, startLine: range.start.line + 1, languageId: editor.document.languageId });
       setTimeout(() => void vscode.env.clipboard.writeText(previous), 600);
+      void recordUse(context, license);
     }),
     vscode.commands.registerCommand('snapline.enterLicense', () => license.enterKey()),
     vscode.commands.registerCommand('snapline.removeLicense', () => license.removeKey()),
