@@ -16,7 +16,12 @@ export interface SnaplineApi {
 }
 
 export async function activate(context: vscode.ExtensionContext): Promise<SnaplineApi> {
-  const license = new License(context);
+  const license = new License(context, {
+    product: 'Snapline',
+    features: 'watermark-free snaps and custom backgrounds',
+    howTo: 'Try it: select some code, right-click → Snap Code.',
+  });
+  context.subscriptions.push(license);
   await license.init();
   const post = (m: ToWebview) => void panel?.webview.postMessage(m);
   license.onDidChange(pro => post({ type: 'pro', pro }));

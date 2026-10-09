@@ -21,6 +21,8 @@ A fast, **actively maintained** alternative to CodeSnap and Polacode.
 
 ## Snapline Pro
 
+**Try it free:** every Pro feature is unlocked for your first 7 days — no signup, no card. After that, keep them with a one-time license.
+
 Free snaps include a small *Snapline* credit in the corner. **Pro** — part of the one-time **Branchline Pro** license, no subscription — adds:
 
 - **No watermark**
